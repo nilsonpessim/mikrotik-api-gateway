@@ -82,7 +82,7 @@ Senha: nilsonpessim
 
 ### :golf: Changelog:
 
-* `Versão 0.0.1 - 18/08/2023`
+* `Versão 0.0.1 - 17/08/2023`
   * Release Inicial
 
 ---
