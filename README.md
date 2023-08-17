@@ -1,8 +1,8 @@
-![Fazer Login](readme/logo.png)
+![Logomarca](readme/logo.png)
 
 ---
 
-**API Gateway** é um sistema de gerenciamento centralizado para MikroTik RouterOS, utilizando a API REST.
+**API Gateway** é um sistema de gerenciamento centralizado para MikroTik RouterOS, utilizando a API REST, ele trabalha como um intermediário, recebendo as requisições de uma fonta externa e encaminhando para o seu roteador MikroTik.
 
 * Requer um Servidor Web com MySQL e PHP Versão 8.2+
 * A API REST da MikroTik está disponível à partir da versão **v7.1beta4** do RouterOS.
@@ -12,7 +12,30 @@
 #### Acesse a documentação no GITHUB
 https://github.com/nilsonpessim/mikrotik-api-gateway/wiki
 
+* Em caso de dúvidas, abra um ISSUE diretamente no GitHub.
+* Consulte sempre o Changelog.
+
 ---
+
+### Capturas de Tela - Acesso API WEB
+
+![Web 01](readme/web_01.png)
+
+![Web 02](readme/web_02.png)
+
+![Web 03](readme/web_03.png)
+
+![Web 04](readme/web_04.png)
+
+---
+
+### Capturas de Tela - Acesso API Postman
+
+![Postman 01](readme/postman_01.png)
+
+---
+
+
 
 ### :wrench: Configurações do Roteador
  
