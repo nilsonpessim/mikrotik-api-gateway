@@ -9,6 +9,11 @@
 
 ---
 
+#### Acesse a documentação no GITHUB
+https://github.com/nilsonpessim/mikrotik-api-gateway/wiki
+
+---
+
 ### :wrench: Configurações do Roteador
  
 #### Configurar certificado digital SSL
