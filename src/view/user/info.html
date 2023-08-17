@@ -1,0 +1,84 @@
+<div class="container mt-3">
+
+    {{status}}
+
+    <a href="/user" class="btn btn-secondary btn-sm"><i class="fa-solid fa-arrow-left"></i></a>
+
+    <div class="row mt-3">
+        
+        <div class="col-sm-12">
+            <h2 class="mb-3">{{fullname}} / [#{{id}}] </h2>
+            <hr>
+        </div>
+
+        <div class="col-sm-4">
+
+            <div class="p-5 bg-danger text-white rounded">
+                <h4 class="mb-4">Dados do Usuário</h4>
+                <p><i class="fa-solid fa-user"></i> {{username}}</p>
+            </div>
+
+            {{enable}}
+            
+        </div>
+
+        <div class="col-sm-8">
+
+            <div class="card">
+                <div class="card-body">
+        
+                    <form method="post">
+
+                        {{csrf}}
+                    
+                        <div class="row">
+            
+                            <div class="col-md-6 mb-1">
+                                <label for="api_edit_fullname">Nome</label>
+                                <input type="text" class="form-control form-control-sm" name="user_edit_fullname" id="user_edit_fullname" value="{{fullname}}" required>
+                            </div>
+            
+                            <div class="col-md-6 mb-1">
+                                <label for="api_edit_username">Email</label>
+                                <input type="email" class="form-control form-control-sm" name="user_edit_username" id="user_edit_username" value="{{username}}" required>
+                            </div>
+                            
+                        </div>
+            
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-success btn-sm"><i class="fa-solid fa-floppy-disk"></i> Atualizar</button>
+                        </div>
+            
+                    </form>
+                
+                </div>
+        
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+        
+                    <form method="post" action="/user/{{id}}/password">
+
+                        {{csrf}}
+
+                        <div class="col-md-12 mb-1">
+                            <label for="user_edit_password">Alterar Senha</label>
+                            <input type="password" class="form-control form-control-sm" name="user_edit_password" id="user_edit_password" required>
+                        </div> 
+            
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-success btn-sm"><i class="fa-solid fa-floppy-disk"></i> Atualizar</button>
+                        </div>
+            
+                    </form>
+                
+                </div>
+        
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>

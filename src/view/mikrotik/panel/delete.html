@@ -1,0 +1,19 @@
+<div class="tab-pane {{active}}" id="method-{{method}}-tab-pane" role="tabpanel" aria-labelledby="method-{{method}}-tab" tabindex="0">
+                
+    <form method="post" action="/mikrotik/{{id}}/call_api_{{method}}" class="mt-4">
+        <div class="row">
+
+            {{csrf}}
+
+            <div class="col-md-12">
+                <label>URL:</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form-control-sm" name="url" value="/ip/address/*9" required>
+                    <button type="submit" class="btn btn-success btn-sm"><i class="fa-solid fa-code"></i> SEND</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</div>

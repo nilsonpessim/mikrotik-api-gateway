@@ -1,0 +1,26 @@
+{
+    "name": "nilsonpessim/mikrotik-api-gateway",
+    "description": "MikroTik API Gateway",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Nilson de Andrade Pessim",
+            "email": "nilson@techlabs.net.br",
+            "homepage": "https://techlabs.net.br",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "7.7.0"
+    }
+}
+
