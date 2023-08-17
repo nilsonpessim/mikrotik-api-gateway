@@ -106,6 +106,9 @@ password: nilson
 Email: mail@example.com
 Senha: nilsonpessim
 ```
+
+![image](https://github.com/nilsonpessim/mikrotik-api-gateway/assets/6774062/876564ee-873e-4919-bcf9-c0aef4491eb4)
+
 ---
 
 ### :golf: Changelog:
