@@ -21,21 +21,7 @@ https://github.com/nilsonpessim/mikrotik-api-gateway/wiki
 
 ![Web 01](readme/web_01.png)
 
-![Web 02](readme/web_02.png)
-
-![Web 03](readme/web_03.png)
-
-![Web 04](readme/web_04.png)
-
 ---
-
-### Capturas de Tela - Acesso API Postman
-
-![Postman 01](readme/postman_01.png)
-
----
-
-
 
 ### :wrench: Configurações do Roteador
  
