@@ -19,7 +19,7 @@
   * **http://SEU-IP-OU-DOMINIO/rest:** URL do seu Servidor.
   * **/mikrotik/1:** Estaremos listando as informações do roteador com o Id 1.
   * **/ip/address:** Informação solicitada.
-
+  * **SEU-USUARIO-DE-API/SUA-SENHA-DE-API:** Credenciais de acesso do usuário, criado dentro do painel administrativo.
 ```
 <?php 
 
