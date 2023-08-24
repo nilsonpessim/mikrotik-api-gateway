@@ -11,16 +11,20 @@ class Api{
     public $username;
     public $password;
     public $mikrotik;
+    public $ipv4;
+    public $ipv6;
     public $status;
 
     public function cadastrar()
     {
         $this->id = (new Database('api'))->insert([
-            'fullname'      => $this->fullname,
-            'username'      => $this->username,
-            'password'      => $this->password,
-            'mikrotik'      => $this->mikrotik,
-            'status'        => $this->status
+            'fullname' => $this->fullname,
+            'username' => $this->username,
+            'password' => $this->password,
+            'mikrotik' => $this->mikrotik,
+            'ipv4'     => $this->ipv4,
+            'ipv6'     => $this->ipv6,
+            'status'   => $this->status
         ]);
 
         return true;
@@ -30,8 +34,8 @@ class Api{
     {
         return (new Database('api'))->update('id = '.$this->id,[
             'fullname' => $this->fullname,
-            'username' => $this->username,
-            'password' => $this->password
+            'ipv4'     => $this->ipv4,
+            'ipv6'     => $this->ipv6,
         ]);
     }
 
@@ -78,6 +82,8 @@ class Api{
             u.username,
             u.password,
             u.mikrotik,
+            u.ipv4,
+            u.ipv6,
             u.status",
             ""
         );

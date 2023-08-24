@@ -16,20 +16,13 @@ class MikroTik extends Page{
 
         if(!isset($queryParams['status'])) return '';
 
-        switch ($queryParams['status']) {
-            case 'created':
-                return Helper\Alert::getSuccess('As informações foram cadastradas!');
-            break;
-            case 'updated':
-                return Helper\Alert::getSuccess('As informações foram atualizadas!');
-            break;
-            case 'duplicated':
-                return Helper\Alert::getError('O Nome do Roteador ou Host API, já existem em outro registro. Tente Novamente!');
-            break;
-            case 'token':
-                return Helper\Alert::getError('Sessão expirada, tente novamente');
-            break;
-        }
+        return match ($queryParams['status']) {
+            'created'    => Helper\Alert::getSuccess('As informações foram cadastradas!'),
+            'updated'    => Helper\Alert::getSuccess('As informações foram atualizadas!'),
+            'duplicated' => Helper\Alert::getError('O Nome do Roteador ou Host API, já existem em outro registro. Tente Novamente!'),
+            'token'      => Helper\Alert::getError('Sessão expirada, tente novamente'),
+            default      => ""
+        };
     }
 
     public static function getMikroTik($request)

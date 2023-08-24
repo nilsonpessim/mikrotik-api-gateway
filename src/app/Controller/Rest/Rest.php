@@ -61,34 +61,20 @@ class Rest{
 
         $routerOS = new RouterOS($obMikroTik->host, $obMikroTik->username, $obMikroTik->password);
 
-        switch ($method) {
-            
-            case 'GET':
-                $result = ['success' => 'true', 'result' => json_decode($routerOS->get($url))];
-            break;
+        return match ($method) {
+            'GET'    => ['success' => 'true', 'result' => json_decode($routerOS->get($url))],
+            'POST'   => ['success' => 'true', 'result' => json_decode($routerOS->post($url, $postVars))],
+            'PATCH'  => ['success' => 'true', 'result' => json_decode($routerOS->patch($url, $postVars))],
+            'PUT'    => ['success' => 'true', 'result' => json_decode($routerOS->put($url, $postVars))],
+            'DELETE' => self::deleteRouterOS($url, $routerOS),
+            default  => throw new \Exception("this request not valid", 400)
+        };
+        
+    }
 
-            case 'POST':
-                $result = ['success' => 'true', 'result' => json_decode($routerOS->post($url, $postVars))];
-            break;
-
-            case 'PATCH':
-                $result = ['success' => 'true', 'result' => json_decode($routerOS->patch($url, $postVars))];
-            break;
-
-            case 'PUT':
-                $result = ['success' => 'true', 'result' => json_decode($routerOS->put($url, $postVars))];
-            break;
-
-            case 'DELETE':
-                $routerOS->delete($url);
-                $result = ['success' => 'true','result'  => 'deleted'];
-            break;
-            
-            default:
-                throw new \Exception("this request not valid", 400);
-            break;
-        }
-
-        return $result;
+    private static function deleteRouterOS($url, $routerOS)
+    {
+        $routerOS->delete($url);
+        return ['success' => 'true','result'  => 'deleted'];       
     }
 }

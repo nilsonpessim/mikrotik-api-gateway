@@ -15,24 +15,15 @@ class Api extends Page{
 
         if(!isset($queryParams['status'])) return '';
 
-        switch ($queryParams['status']) {
-            case 'created':
-                return Helper\Alert::getSuccess('As informações foram cadastradas!');
-                break;
-            case 'updated':
-                return Helper\Alert::getSuccess('As informações foram atualizadas!');
-                break;
-            case 'deleted':
-                return Helper\Alert::getSuccess('As informações foram excluídas!');
-                break;
-            case 'mikrotik':
-                return Helper\Alert::getError('É necessário informar pelo menos 1 MikroTik');
-            break;
-            case 'token':
-                return Helper\Alert::getError('Sessão expirada, tente novamente');
-            break;
-        }
-
+        return match ($queryParams['status']) {
+            'created'  => Helper\Alert::getSuccess('As informações foram cadastradas!'),
+            'updated'  => Helper\Alert::getSuccess('As informações foram atualizadas!'),
+            'deleted'  => Helper\Alert::getSuccess('As informações foram excluídas!'),
+            'mikrotik' => Helper\Alert::getError('É necessário informar pelo menos 1 MikroTik'),
+            'token'    => Helper\Alert::getError('Sessão expirada, tente novamente'),
+            default    => ""
+        };
+        
     }
 
     public static function getUser($request)
@@ -115,19 +106,9 @@ class Api extends Page{
             $request->getRouter()->redirect('/api/new?status=token');
         }
 
-        $postVars['status'] = 1;
+        $fullname = (isset($postVars['fullname'])) ? $postVars['fullname'] : bin2hex(random_bytes(6));
 
-        $fullname      = $postVars['fullname'];
-        $username      = $postVars['username'];
-        $status        = $postVars['status'];
-        $password      = $postVars['password'];
-
-        $obAPI      = EntityApi::getUserByUsername($username);
         $obAPIName  = EntityApi::getUserByFullname($fullname);
-
-        if($obAPI instanceof EntityApi){
-            $request->getRouter()->redirect('/api/new?status=duplicated');
-        }
 
         if($obAPIName instanceof EntityApi){
             $request->getRouter()->redirect('/api/new?status=duplicated');
@@ -144,14 +125,18 @@ class Api extends Page{
 
         if(!isset($itens)){
             $request->getRouter()->redirect('/api/new?status=mikrotik');
-        } 
+        }
 
         $obAPI = new EntityApi;
-        $obAPI->fullname     = (new Helper\ConvertValue($fullname))->setString();
-        $obAPI->username     = $username;
-        $obAPI->mikrotik     = join(",",$itens);
-        $obAPI->status       = $status;
-        $obAPI->password     = $password;
+        
+        $obAPI->fullname = (new Helper\ConvertValue($fullname))->setString();
+        $obAPI->username = bin2hex(random_bytes(5));
+        $obAPI->password = bin2hex(random_bytes(15));
+        $obAPI->mikrotik = join(",",$itens);
+        $obAPI->ipv4     = "*";
+        $obAPI->ipv6     = "*";
+        $obAPI->status   = 1;
+
         $obAPI->cadastrar();
 
         $request->getRouter()->redirect('/api/?status=created');
@@ -183,6 +168,8 @@ class Api extends Page{
             'fullname'    => $obAPI->fullname,
             'username'    => $obAPI->username,
             'password'    => $obAPI->password,
+            'ipv4'           => $obAPI->ipv4,
+            'ipv6'           => $obAPI->ipv6,
             'status_color'   => $status_color,
             'status_message' => $status_message,
             'mk_itens'       => self::getMikrotikItens($request),
@@ -204,13 +191,13 @@ class Api extends Page{
         $obAPI = EntityApi::getUserById($id);
 
         $fullname = $postVars['api_edit_fullname'];
-        $username = $postVars['api_edit_username'];
-        $password = $postVars['api_edit_password'];
+        $ipv4     = $postVars['api_edit_ipv4'];
+        $ipv6     = $postVars['api_edit_ipv6'];
 
-        $obAPI->id        = $obAPI->id;
-        $obAPI->fullname  = (new Helper\ConvertValue($fullname))->setString();
-        $obAPI->username  = $username;
-        $obAPI->password  = $password;
+        $obAPI->id       = $obAPI->id;
+        $obAPI->fullname = (new Helper\ConvertValue($fullname))->setString();
+        $obAPI->ipv4     = $ipv4;
+        $obAPI->ipv6     = $ipv6;
         $obAPI->atualizar();
 
         $request->getRouter()->redirect('/api/'.$id.'/info?status=updated');

@@ -1,6 +1,6 @@
 <?php
 
-// ------- CONFIGURAÇÕES  ----------------
+// ------- CONFIGURAÇÕES  -------------------------
 
 $appUrl = "http://localhost";
 
@@ -10,15 +10,13 @@ $dbUser = "user";
 $dbPass = "nilson";
 $dbPort = 3306;
 
-// ------- CONFIGURAÇÕES  ----------------
-
+// ------- CONFIGURAÇÕES  -------------------------
 
 
 // INCLUI CLASSES NA PAGINA
 use App\Http\Middleware\Queue;
 use App\Database\Database;
 use App\View\View;
-
 
 // INICIA A SESSÃO
 (new \App\Session\Login)::getStatus();
@@ -33,7 +31,6 @@ if (isset($_SESSION['user'])) {
     unset($_SESSION['user']);
 }
 
-
 // CONSTANTES DE APPLICATION
 define("URL", $appUrl);
 
@@ -41,7 +38,7 @@ define("APP_DESCRIPTION",  "MikroTik API Gateway");
 define("APP_AUTHOR",       "Nilson Pessim by TechLabs Technology");
 define("APP_TIMEZONE",     "America/Sao_Paulo");
 define("APP_DEV_HOMEPAGE", "https://github.com/nilsonpessim");
-define("APP_VERSION",      "v0.0.1");
+define("APP_VERSION",      "v0.0.2");
 
 define("ASSETS",  URL . '/view/assets');
 
@@ -76,4 +73,3 @@ Queue::setDefault([
     'maintenance',
     'license'
 ]);
-

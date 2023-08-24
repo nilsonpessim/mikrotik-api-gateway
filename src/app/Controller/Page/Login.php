@@ -16,15 +16,11 @@ class Login extends Page{
 
         if(!isset($queryParams['status'])) return '';
 
-        switch ($queryParams['status']) {
-            case 'invalid':
-                return Alert::getError('Usuário ou Senha Inválidos!');
-                break;
-            case 'disabled':
-                return Alert::getError('Usuário desabilitado, entre em contato com o administrador!');
-                break;
-        }
-
+        return match ($queryParams['status']) {
+            'invalid'  => Alert::getError('Usuário ou Senha Inválidos!'),
+            'disabled' => Alert::getError('Usuário desabilitado, entre em contato com o administrador!'),
+            default    => ""
+        };
     }
 
     public static function getLoginPage($request)

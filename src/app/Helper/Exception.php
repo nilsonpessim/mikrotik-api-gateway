@@ -12,16 +12,6 @@ class Exception{
     public function getException($host, $auth, $method = "GET", $data = [])
     {
         try {
-
-            /*print_r([
-                $host,
-                $auth,
-                $method,
-                $data
-            ]);
-
-            exit;
-            */
             
             $response = (new Client($auth))->request($method, $host, $data);
         
@@ -54,7 +44,10 @@ class Exception{
 
             switch ($errId) {
                 case 7:
-                    //throw new \Exception("failed to connect to router", 404);
+                    return json_encode(["error" => "failed to connect to router"]);
+                break;
+
+                case 28:
                     return json_encode(["error" => "failed to connect to router"]);
                 break;
                 

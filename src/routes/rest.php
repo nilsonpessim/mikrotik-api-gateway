@@ -96,7 +96,7 @@ $obRouter->get('/rest/mikrotik/{id}',[
 ]);
 
 //ROTA DE HOME DA API
-$obRouter->get('/rest/{id}',[
+$obRouter->get('/rest/{uri}',[
     'middlewares' => [
         'rest',
         'user-basic-auth'

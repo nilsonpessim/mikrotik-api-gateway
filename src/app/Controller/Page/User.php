@@ -14,20 +14,13 @@ class User extends Page{
 
         if(!isset($queryParams['status'])) return '';
 
-        switch ($queryParams['status']) {
-            case 'created':
-                return Helper\Alert::getSuccess('As informações foram cadastradas!');
-                break;
-            case 'updated':
-                return Helper\Alert::getSuccess('As informações foram atualizadas!');
-                break;
-            case 'deleted':
-                return Helper\Alert::getSuccess('As informações foram excluídas!');
-                break;
-            case 'token':
-                return Helper\Alert::getError('Sessão expirada, tente novamente');
-            break;
-        }
+        return match ($queryParams['status']) {
+            'created'  => Helper\Alert::getSuccess('As informações foram cadastradas!'),
+            'updated'  => Helper\Alert::getSuccess('As informações foram atualizadas!'),
+            'deleted'  => Helper\Alert::getSuccess('As informações foram excluídas!'),
+            'token'    => Helper\Alert::getError('Sessão expirada, tente novamente'),
+            default    => ""
+        };
 
     }
 
