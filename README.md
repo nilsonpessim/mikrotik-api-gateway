@@ -9,11 +9,24 @@
 
 ---
 
-#### Acesse a documentação no GITHUB
+#### Confira todos os Releases
+https://github.com/nilsonpessim/mikrotik-api-gateway/releases
+
+* Baixe sempre a última versão disponível.
+---
+
+#### Sugestão de melhorias
+https://github.com/nilsonpessim/mikrotik-api-gateway/pulls
+
+* Para sugestões de melhorias e funcionalidades no código, abra um [PULL REQUEST](https://github.com/nilsonpessim/mikrotik-api-gateway/pulls) diretamente no GitHub.
+
+---
+
+#### Acesse a documentação Completa
 https://github.com/nilsonpessim/mikrotik-api-gateway/wiki
 
-* Em caso de dúvidas, abra um ISSUE diretamente no GitHub.
-* Consulte sempre o Changelog.
+* Em caso de dúvidas, abra um [ISSUE](https://github.com/nilsonpessim/mikrotik-api-gateway/issues) diretamente no GitHub.
+* Leia sempre o nosso Changelog.
 
 ---
 
