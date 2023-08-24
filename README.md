@@ -99,7 +99,7 @@ Senha: nilsonpessim
 
 ### :golf: Changelog:
 
-* `Versão 0.0.2 - 24/08/2023`
+* `Versão 0.0.2 - 23/08/2023`
   * Quando criar um novo User API, o login e senha serão gerados automaticamente.
   * Implementado controle de acesso via networks IPv4 e IPv6.
   * Melhorias e correções de bugs.
