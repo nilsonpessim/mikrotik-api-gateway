@@ -1,3 +1,9 @@
+CREATE DATABASE mikrotik;
+GRANT ALL PRIVILEGES ON mikrotik.* TO 'user'@'localhost' IDENTIFIED BY 'nilson';
+FLUSH PRIVILEGES;
+
+USE mikrotik;
+
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
