@@ -7,7 +7,7 @@
 * Requer um Servidor Web com MySQL e PHP Versão 8.2+
 * A API REST da MikroTik está disponível à partir da versão **v7.1beta4** do RouterOS.
 
-**Versão 0.1.1**
+**Versão 0.1.2**
 
 #### Video de Apresentação
 
