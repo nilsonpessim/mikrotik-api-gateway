@@ -1,0 +1,124 @@
+<div class="container mt-3">
+
+    {{status}}
+
+    <a href="/api" class="btn btn-secondary btn-circle btn-sm"><i class="fa-solid fa-arrow-left"></i></a>
+
+    <div class="row mt-3">
+
+        <div class="col-sm-5">
+
+            <div class="p-4 bg-danger text-white rounded">
+                <h5 class="mb-2">Dados de Autenticação API</h5>
+                <p><i class="fa-solid fa-user"></i> {{username}}</p>
+                <p><i class="fa-solid fa-key"></i> {{password}}</p>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <form method="post" action="/api/{{id}}/status">
+        
+                        <input type="hidden" id="api_edit_form" value="form">
+                        <input type="hidden" id="api_edit_id" value="{{id}}">
+                        {{csrf}}
+                       
+                        <div class="col-md-12 status_color">
+                            
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" onChange="this.form.submit()" id="api_edit_status" name="api_edit_status">
+                                <label class="form-check-label fw-bold text-dark" for="api_edit_status">Ativar Usuário</label>
+                            </div>
+
+                            <span class="badge bg-{{status_color}} mt-3">{{status_message}}</span>
+
+                            <a href="#" type="button" class="btn btn-link btn-sm" data-bs-toggle="popover" title="Informações" data-bs-trigger="focus" data-bs-content="Habilite para permitir o acesso via API">
+                                <i class="fa-solid fa-info-circle"></i>
+                            </a>
+
+                        </div>
+            
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="col-sm-7">
+
+            <div class="card">
+                <div class="card-body">
+        
+                    <form method="post">
+
+                        {{csrf}}
+                    
+                        <div class="row">
+            
+                            <div class="col-md-12 mb-3">
+                                <label for="api_edit_fullname" class="fw-bold text-dark mb-2">Nome</label>
+                                <input type="text" class="form-control form-control-sm" name="api_edit_fullname" id="api_edit_fullname" value="{{fullname}}" required>
+                            </div>
+            
+                            <div class="col-md-6 mb-3">
+                                <label for="api_edit_ipv4" class="fw-bold text-dark mb-2">Networks IPv4</label>
+                                <input type="text" class="form-control form-control-sm" name="api_edit_ipv4" id="api_edit_ipv4" value="{{ipv4}}" required>
+                            </div>
+            
+                            <div class="col-md-6 mb-3">
+                                <label for="api_edit_ipv6" class="fw-bold text-dark mb-2">Networks IPv6</label>
+                                <input type="text" class="form-control form-control-sm" name="api_edit_ipv6" id="api_edit_ipv6" value="{{ipv6}}" required>
+                            </div> 
+                            
+                        </div>
+                        
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-success btn-sm"><i class="fa-solid fa-floppy-disk"></i> Atualizar</button>
+                            
+                            <a href="#" class="btn btn-link btn-sm" data-bs-toggle="popover" title="Informações" data-bs-trigger="focus" data-bs-content="As networks devem ser separadas por vírgula ( , ). O caracter ( * ) é permitido para liberar acesso a qualquer network.">
+                                <i class="fa-solid fa-info-circle"></i>
+                            </a>
+
+                        </div>
+
+                         
+            
+                    </form>
+                
+                </div>
+        
+            </div>
+            
+        </div>
+
+        <div class="col-sm-12 mb-5">
+            <div class="card mt-3">
+                <div class="card-body">
+        
+                    <form method="post" action="/api/{{id}}/mikrotik">
+
+                        <input type="hidden" id="api_mikrotik_form" value="form">
+                        <input type="hidden" id="api_mikrotik_id" value="{{id}}">
+                        {{csrf}}
+                    
+                        <label class="fw-bold text-dark mb-2">Permitir conexão em:</label>
+                        
+                        <div class="row">
+            
+                            {{mk_itens}}
+                            
+                        </div>
+            
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-success btn-sm"><i class="fa-solid fa-floppy-disk"></i> Atualizar</button>
+                        </div>
+            
+                    </form>
+                
+                </div>
+        
+            </div>
+        </div>
+
+    </div>
+
+</div>

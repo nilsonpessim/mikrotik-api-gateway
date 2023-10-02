@@ -1,0 +1,37 @@
+<a href="/mikrotik/new" class="btn btn-success btn-circle btn-sm" title="Adicionar MikroTik"><i class="fa-solid fa-plus"></i></a>
+
+<div class="mt-4">
+    <h5>{{title}}</h5>
+</div>
+
+{{status}}
+
+<div class="card mt-4">
+
+    <div class="card-body">
+        
+        <div class="table-responsive">
+
+            <table id="tbMikroTik" class="table table-responsive mb-0">
+                
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Host API</th>
+                        <th>Usuário API</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {{table_itens}}
+                </tbody>
+
+            </table>
+
+        </div>
+        
+    </div>
+
+</div>

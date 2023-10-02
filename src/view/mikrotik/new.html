@@ -1,0 +1,48 @@
+<a href="/mikrotik" class="btn btn-secondary btn-circle btn-sm" title="Voltar"><i class="fa-solid fa-arrow-left"></i></a></td>
+
+<div class="mt-4">
+    <h5>Cadastrar MikroTik - API</h5>
+</div>
+
+{{status}}
+
+<div class="card mt-4">
+    <div class="card-body">
+
+        <form method="post">
+
+            {{csrf}}
+                
+            <div class="row"> 
+                
+                <div class="col-md-3">
+                    <label for="fullname" class="mb-2 fw-bold text-gray-800">Nome do Roteador:</label>
+                    <input type="text" class="form-control form-control-sm" name="fullname" id="fullname" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="host" class="mb-2 fw-bold text-gray-800">URL API Rest: </label>
+                    <input type="text" class="form-control form-control-sm" name="host" id="host" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="username" class="mb-2 fw-bold text-gray-800">Usuario do MikroTik:</label>
+                    <input type="text" class="form-control form-control-sm" name="username" id="username" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="password" class="mb-2 fw-bold text-gray-800">Senha do MikroTik:</label>
+                    <input type="text" class="form-control form-control-sm" name="password" id="password" required>
+                </div>
+
+            </div>
+
+            <div class="mt-4">
+                <button type="submit" title="Cadastrar MikroTik" class="btn btn-success btn-sm"><i class="fa-solid fa-floppy-disk"></i> Cadastrar</button>
+            </div>
+
+        </form>
+        
+        
+    </div>
+</div>

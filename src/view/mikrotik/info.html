@@ -1,0 +1,142 @@
+<a href="/mikrotik" class="btn btn-secondary btn-circle btn-sm" title="Voltar"><i class="fa-solid fa-arrow-left"></i></a>
+{{button_api}}
+
+{{status}}
+
+<div class="loading-mask" id="mascara">
+    <div class="loading-spinner-container">
+        <div class="loading-spinner"></div>
+    </div>
+    <p class="loading-text">Conectando na API...</p>
+</div>
+
+<div class="row">
+    
+    <div class="col-md-7">
+        <div class="card mt-4">
+            <div class="card-body">
+        
+                <div id="stats2" class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="fw-bold text-danger">Board Name</div>
+                        <div id="info_board" class="mb-0 fw-bold text-gray-800"></div>
+                    </div>
+                    <div class="col mr-2">
+                        <div class="fw-bold text-danger"> Version </div>
+                        <div id="info_version" class="mb-0 fw-bold text-gray-800"></div>
+                    </div>
+                    <div class="col mr-2">
+                        <div class="fw-bold text-danger"> Uptime </div>
+                        <div id="info_uptime" class="mb-0 fw-bold text-gray-800"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-5">
+        <div class="card mt-4">
+            <div class="card-body">
+        
+                <div id="stats1" class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="fw-bold text-info">CPU</div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <div id="info_cpu" class="mb-0 mr-3 fw-bold text-gray-800"></div>
+                            </div>
+                            <div class="col">
+                                <div class="progress progress-sm mr-2">
+                                    <div id="progressBarCPU" class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuemin="0"
+                              aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mr-2">
+                        <div class="fw-bold text-info">Memória Livre</div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <div id="info_ram" class="mb-0 mr-3 fw-bold text-gray-800"></div>
+                            </div>
+                            <div class="col">
+                                <div class="progress progress-sm mr-2">
+                                    <div id="progressBarRAM" class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="card mt-4">
+
+    <div class="card-body">
+        
+        <form method="post">
+                
+            <div class="row">
+
+                <input type="hidden" id="mikrotik_edit_form" value="form">
+                <input type="hidden" id="mikrotik_edit_id" value="{{id}}">
+                {{csrf}}
+
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="mikrotik_edit_fullname" class="fw-bold text-dark mb-2">Nome:</label>
+                        <input type="text" class="form-control form-control-sm" name="mikrotik_edit_fullname" id="mikrotik_edit_fullname" value="{{fullname}}" required>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="mikrotik_edit_host" class="fw-bold text-dark mb-2">Host API:</label>
+                        <input type="text" class="form-control form-control-sm" name="mikrotik_edit_host" id="mikrotik_edit_host" value="{{host}}" required>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="mikrotik_edit_username" class="fw-bold text-dark mb-2">Usuario da API:</label>
+                        <input type="text" class="form-control form-control-sm" name="mikrotik_edit_username" id="mikrotik_edit_username" value="{{username}}" required>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="mikrotik_edit_password" class="fw-bold text-dark mb-2">Senha da API:</label>
+                        <input type="text" class="form-control form-control-sm" name="mikrotik_edit_password" id="mikrotik_edit_password" value="{{password}}" required>
+                    </div>
+                </div> 
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" name="mikrotik_edit_status" id="mikrotik_edit_status">
+                            <label class="form-check-label fw-bold text-primary" for="mikrotik_edit_status">
+                                Ativar Roteador
+                            </label>
+                          </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="mt-2">
+                <button type="submit" class="btn btn-success btn-sm" title="Atualizar Informações"><i class="fa-solid fa-floppy-disk"></i> Atualizar</button>
+            </div>
+
+        </form>
+        
+    </div>
+
+</div>

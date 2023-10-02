@@ -1,0 +1,59 @@
+<a href="/mikrotik/{{id}}/info" class="btn btn-secondary btn-circle btn-sm" title="Voltar"><i class="fa-solid fa-arrow-left"></i></a>
+
+<div class="mt-4">
+
+    <code class="mt-5">
+        <p>[ID: {{id}}] :: [Roteador: {{fullname}}] :: [Código: {{code}}]</p>
+    </code>
+    
+</div>
+
+{{status}}
+
+<div class="mt-3">
+    <a href="https://github.com/nilsonpessim/mikrotik-api-gateway" target="_blank" class="btn btn-danger btn-sm" title="Acessar Documentação"><i class="fa-brands fa-github"></i> DOCUMENTAÇÃO COMPLETA</a>
+</div>
+
+<div class="card mt-4">
+    <div class="card-body">
+        
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            
+            <!-- NAV METHOD GET -->
+            {{api_nav_get}}
+
+            <!-- NAV METHOD POST -->
+            {{api_nav_post}}
+
+            <!-- NAV METHOD DELETE -->
+            {{api_nav_delete}}
+
+            <!-- NAV METHOD PATCH -->
+            {{api_nav_patch}}
+
+            <!-- NAV METHOD PUT -->
+            {{api_nav_put}}
+
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            
+            <!-- PANEL METHOD GET -->
+            {{api_panel_get}}
+
+            <!-- PANEL METHOD POST -->
+            {{api_panel_post}}
+
+            <!-- PANEL METHOD DELETE -->
+            {{api_panel_delete}}
+
+            <!-- PANEL METHOD PATCH -->
+            {{api_panel_patch}}
+
+            <!-- PANEL METHOD PUT -->
+            {{api_panel_put}}
+            
+        </div>
+
+    </div>
+</div>
