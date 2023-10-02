@@ -21,11 +21,13 @@ class Exception{
                $statusCode = $e->getResponse()->getStatusCode();
             }
 
-            //print_r($e); exit;
-
             switch ($statusCode) {
                 case 400:
                     return json_encode(['success' => 'false', 'result' => 'no such command']);
+                break;
+
+                case 401:
+                    return json_encode(['success' => 'false', 'result' => 'unauthorized']);
                 break;
 
                 case 404:
@@ -37,7 +39,8 @@ class Exception{
                 break;
 
                 default:
-                    throw new \Exception($statusCode, 404);
+                    return json_encode(['success' => 'false', 'result' => "Error $statusCode - Undocumented"]);
+                    //throw new \Exception($statusCode, 404);
                 break;
             }
         
@@ -58,12 +61,14 @@ class Exception{
                 break;
                 
                 default:
-                    throw new \Exception($errId, 404);
+                    return json_encode(['success' => 'false', 'result' => "Error $errId - Undocumented"]);
+                    //throw new \Exception($errId, 404);
                 break;
             }
         
         } catch (\Exception $e) {
-            throw new \Exception("erro", 404);
+            return json_encode(['success' => 'false', 'result' => "Error"]);
+            //throw new \Exception("erro", 404);
         }
 
         // RETORNA O RESPONSE

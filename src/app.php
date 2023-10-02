@@ -1,7 +1,9 @@
 <?php
 
 // ------- CONFIGURAÇÕES  -------------------------
-$appUrl = "http://localhost";
+
+// Use HTTPS caso o seu domínio possuir um certificado SSL instalado.
+$appUrl = "https://localhost";
 
 $dbHost = "localhost";
 $dbName = "mikrotik";
@@ -36,7 +38,7 @@ define("APP_DESCRIPTION",  "MikroTik API Gateway");
 define("APP_AUTHOR",       "Nilson Pessim by TechLabs Technology");
 define("APP_TIMEZONE",     "America/Sao_Paulo");
 define("APP_DEV_HOMEPAGE", "https://github.com/nilsonpessim");
-define("APP_VERSION",      "v0.1.1");
+define("APP_VERSION",      "v0.1.2");
 
 define("ASSETS",  URL . '/view/assets');
 

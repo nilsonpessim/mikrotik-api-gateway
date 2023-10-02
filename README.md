@@ -120,6 +120,11 @@ Senha: nilsonpessim
 
 ### :golf: Changelog:
 
+* `Versão 0.1.2 - 02/10/2023`
+  * Corrigido um problema que afetava o carregamento da página de informações do MikroTik, quando a API não conseguia se conectar (usando Usuário e Senha) no RouterOS.
+  * Melhorias nos tratamentos das Exceptions de conexão ao RouterOS.
+---
+
 * `Versão 0.1.1 - 02/10/2023`
   * Reformulação do layout das páginas, na versão web (App Web).
   * Adicionado compatibilidades com novos comandos do MikroTik (API WEB e REST).

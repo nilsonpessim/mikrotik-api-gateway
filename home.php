@@ -1,7 +1,7 @@
 <div class="col-sm-4 mb-3">
     <div class="card card-body">
         <h4 class="card-title mb-1">Último Release:</h4>
-        <p class="card-text">v.0.1.1 - 02/10/2023</p>
+        <p class="card-text">v.0.1.2 - 02/10/2023</p>
         <a href="https://github.com/nilsonpessim/mikrotik-api-gateway/releases" target="_blank" class="btn btn-danger" title="Ver Todos os Releases">Ver Todos</a>
     </div>
 </div>
