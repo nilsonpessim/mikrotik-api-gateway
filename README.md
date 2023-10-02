@@ -120,7 +120,7 @@ Senha: nilsonpessim
 
 ### :golf: Changelog:
 
-* `Versão 0.1.1 - 27/09/2023`
+* `Versão 0.1.1 - 02/10/2023`
   * Reformulação do layout das páginas, na versão web (App Web).
   * Adicionado compatibilidades com novos comandos do MikroTik (API WEB e REST).
   * Melhorias no fluxo da API e correções de diversos bugs (API WEB e REST).
