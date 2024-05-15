@@ -97,6 +97,7 @@ Pacotes necessários para funcionamento do Sistema.
 * Envie os arquivos da pasta *src* para a raiz do seu servidor Web.
 * Importe o scheme SQL presente na pasta *sql* para o seu banco de dados.
 * Se necessário altere as credenciais do banco de dados:
+* Necessário Composer
 
 ```
 db: mikrotik
